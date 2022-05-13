@@ -464,7 +464,7 @@ public class WifiWizard2 extends CordovaPlugin {
         wifi.priority = getMaxWifiPriority(wifiManager) + 1;
       }
 
-      if(API_VERSION >= 29) {
+      if(API_VERSION > 29) {
         this.networkCallback = new ConnectivityManager.NetworkCallback() {
           @Override
           public void onAvailable(Network network) {
@@ -859,7 +859,7 @@ public class WifiWizard2 extends CordovaPlugin {
       return false;
     }
 
-    if(API_VERSION < 29){
+    if(API_VERSION <= 29){
         int networkIdToDisconnect = ssidToNetworkId(ssidToDisconnect);
 
         if(networkIdToDisconnect > 0) {
